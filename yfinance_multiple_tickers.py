@@ -18,10 +18,10 @@ ohlcv_data = {} # empty dictionary which will be filled with ohlcv dataframe for
 # looping over tickers and creating a dataframe with close prices
 for ticker in stocks:
     cl_price[ticker] = yf.download(ticker,start,end)["Adj Close"]
-    
+
 
 # looping over tickers and storing OHLCV dataframe in dictionary
 for ticker in stocks:
     ohlcv_data[ticker] = yf.download(ticker,start,end)
-    
 
+ohlcv_data['AMZN']
