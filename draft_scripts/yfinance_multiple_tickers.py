@@ -24,4 +24,5 @@ for ticker in stocks:
 for ticker in stocks:
     ohlcv_data[ticker] = yf.download(ticker,start,end)
 
+cl_price['AMZN']
 ohlcv_data['AMZN']

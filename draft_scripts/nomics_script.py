@@ -2,7 +2,7 @@ from nomics import Nomics
 
 from configparser import ConfigParser
 api_keys = ConfigParser()
-api_keys.read("../api_keys_config.ini")
+api_keys.read("api_keys_config.ini")
 
 nomics = Nomics(api_keys["API_KEYS"]["nomics"])
 

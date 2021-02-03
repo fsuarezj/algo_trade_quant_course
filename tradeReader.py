@@ -17,7 +17,7 @@ class TradeReader():
             fiat = self.fiat
         return self.api.get_price(self.coin_id[id], fiat)
 
-    def get_coin_ticker_by_id(self, id, fiat =""):
+    def get_coin_ohlc_by_id(self, id, fiat ="", days = 1):
         if fiat == "":
             fiat = self.fiat
-        return self.api.get_coin_ticker_by_id(self.coin_id[id], vs_currencies = fiat)
+        return self.api.get_coin_ohlc_by_id(self.coin_id[id], fiat, days)
