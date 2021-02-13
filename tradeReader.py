@@ -5,7 +5,8 @@ class TradeReader():
     coin_id = {
         'btc': 'bitcoin',
         'eth': 'ethereum',
-        'eur': 'euro'
+        'eur': 'euro',
+        'usd': 'usdollar'
     }
 
     def __init__(self, fiat = 'eur', source = "coingecko"):
