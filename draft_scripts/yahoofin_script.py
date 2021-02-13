@@ -22,8 +22,8 @@ for ticker in all_tickers:
     temp.set_index("formatted_date",inplace=True)
     temp.dropna(inplace=True)
     close_prices[ticker] = temp["adjclose"]
-    
-    
+
+
 # extracting stock data (ohlcv) for the stocks identified
 ohlv_dict = {}
 end_date = (dt.date.today()).strftime('%Y-%m-%d')
@@ -36,3 +36,5 @@ for ticker in all_tickers:
     temp.set_index("formatted_date",inplace=True)
     temp.dropna(inplace=True)
     ohlv_dict[ticker] = temp
+
+ohlv_dict

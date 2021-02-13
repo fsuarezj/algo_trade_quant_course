@@ -4,4 +4,4 @@ reader = TradeReader()
 
 reader.get_price('btc')
 
-reader.get_coin_ohlc_by_id('btc', days = 1)
+print(reader.get_coin_ohlc_by_id('btc', days = 1))

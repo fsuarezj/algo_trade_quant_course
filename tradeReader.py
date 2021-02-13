@@ -1,4 +1,5 @@
 from pycoingecko import CoinGeckoAPI
+import pandas as pd
 
 class TradeReader():
     coin_id = {
@@ -12,6 +13,11 @@ class TradeReader():
         if self.source == "coingecko":
             self.api = CoinGeckoAPI()
 
+    def __getDf(self,data):
+        temp = pd.DataFrame(data = data, columns = ["time","open", "high","low","close"])
+        temp.set_index("time", inplace = True)
+        return temp
+
     def get_price(self, id, fiat = ""):
         if fiat == "":
             fiat = self.fiat
@@ -20,4 +26,5 @@ class TradeReader():
     def get_coin_ohlc_by_id(self, id, fiat ="", days = 1):
         if fiat == "":
             fiat = self.fiat
-        return self.api.get_coin_ohlc_by_id(self.coin_id[id], fiat, days)
+        result_data = self.api.get_coin_ohlc_by_id(self.coin_id[id], fiat, days)
+        return self.__getDf(result_data)
