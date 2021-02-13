@@ -4,7 +4,8 @@ import pandas as pd
 class TradeReader():
     coin_id = {
         'btc': 'bitcoin',
-        'eth': 'ethereum'
+        'eth': 'ethereum',
+        'eur': 'euro'
     }
 
     def __init__(self, fiat = 'eur', source = "coingecko"):
